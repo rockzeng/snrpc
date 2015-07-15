@@ -14,6 +14,95 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+    <build>
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testResources>
+            <testResource>
+                <directory>src/test/java</directory>
+            </testResource>
+            <testResource>
+                <directory>src/test/integration</directory>
+            </testResource>
+        </testResources>
+        <plugins>
+            <plugin>
+                <groupId>com.dyuproject.protostuff</groupId>
+                <artifactId>protostuff-maven-plugin</artifactId>
+                <version>1.0.9</version>
+                <configuration>
+                    <protoModules>
+                        <!--<protoModule>-->
+                        <!--<source>protobuf/common.proto</source>-->
+                        <!--<outputDir>src/main/java</outputDir>-->
+                        <!--<output>java_bean</output>-->
+                        <!--<encoding>UTF-8</encoding>-->
+                        <!--<options>-->
+                        <!--<property>-->
+                        <!--<name>separate_schema</name>-->
+                        <!--</property>-->
+                        <!--<property>-->
+                        <!--<name>generate_field_map</name>-->
+                        <!--</property>-->
+                        <!--</options>-->
+                        <!--</protoModule>-->
+                        <protoModule>
+                            <source>protobuf/trade.proto</source>
+                            <outputDir>src/main/java</outputDir>
+                            <output>java_bean</output>
+                            <encoding>UTF-8</encoding>
+                            <options>
+                                <property>
+                                    <name>separate_schema</name>
+                                </property>
+                                <property>
+                                    <name>generate_field_map</name>
+                                </property>
+                            </options>
+                        </protoModule>
+                        <protoModule>
+                            <source>protobuf/base.proto</source>
+                            <outputDir>src/main/java</outputDir>
+                            <output>java_bean</output>
+                            <encoding>UTF-8</encoding>
+                            <options>
+                                <property>
+                                    <name>separate_schema</name>
+                                </property>
+                                <property>
+                                    <name>generate_field_map</name>
+                                </property>
+                            </options>
+                        </protoModule>
+                    </protoModules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.6</version>
+            </plugin>
+        </plugins>
+    </build>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -30,7 +119,6 @@
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>dom4j</groupId>
@@ -41,8 +129,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.6</version>
-			<optional>true</optional>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.netty</groupId>
@@ -69,16 +155,12 @@
 		<dependency>
 			<groupId>com.dyuproject.protostuff</groupId>
 			<artifactId>protostuff-core</artifactId>
-			<version>1.0.7</version>
-			<optional>true</optional>
-			<scope>provided</scope>
+			<version>1.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.dyuproject.protostuff</groupId>
 			<artifactId>protostuff-runtime</artifactId>
-			<version>1.0.7</version>
-			<optional>true</optional>
-			<scope>provided</scope>
+			<version>1.0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-pool</groupId>

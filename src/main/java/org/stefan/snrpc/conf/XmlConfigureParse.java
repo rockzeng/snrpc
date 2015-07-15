@@ -18,8 +18,8 @@ import org.stefan.snrpc.util.StringUtil;
  * XmlConfigureParse
  * <application>
  	<rpcServices>
-		<rpcService name="SnRpcInterface" interface="org.stefan.snrpc.server.SnRpcInterface" overload="true">
-           <rpcImplementor  class="org.stefan.snrpc.server.SnRpcImpl"/> 
+		<rpcService name="SnRpcInterface" interface="org.stefan.snrpc.mock.server.SnRpcInterface" overload="true">
+           <rpcImplementor  class="org.stefan.snrpc.mock.server.SnRpcImpl"/>
 		</rpcService>
 	</rpcServices>
 </application>

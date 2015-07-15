@@ -4,8 +4,8 @@ package org.stefan.snrpc.conf;
  * RpcService 
  * <rpcServices>
  * 	 <rpcService name="SnRpcInterface"
- * 			interface="org.stefan.snrpc.server.SnRpcInterface" overload="true">
- *		 		<rpcImplementor class="org.stefan.snrpc.server.SnRpcImpl"/> 
+ * 			interface="org.stefan.snrpc.mock.server.SnRpcInterface" overload="true">
+ *		 		<rpcImplementor class="org.stefan.snrpc.mock.server.SnRpcImpl"/>
  *		  </rpcService>
  * </rpcServices>
  * 
