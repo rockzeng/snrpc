@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<application>
-    <!-- rpc interface services -->
-    <rpcServices>
-        <rpcService name="TradeLoginService" interface="org.stefan.snrpc.mock.server.TradeService" overload="true">
-            <rpcImplementor class="org.stefan.snrpc.mock.server.TradeLoginServiceImpl"/>
-        </rpcService>
-    </rpcServices>
-</application>
